@@ -12,6 +12,6 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Build'
-- script: dotnet test **/*Tests.csproj --configuration $(buildConfiguration)
+- script: dotnet test **/*Test.csproj --configuration $(buildConfiguration)
   displayName: 'Unit test'
 

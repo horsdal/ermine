@@ -12,6 +12,10 @@ variables:
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'Build'
-- script: dotnet test test/UnitTest/UnitTest.csproj --configuration $(buildConfiguration)
-  displayName: 'Unit test'
+- script: dotnet test test/UnitTest/UnitTest.csproj --configuration $(buildConfiguration) --logger trx
+  displayName: 'Unit test'  
+- task: PublishTestResults@2
+  inputs:
+    testRunner: VSTest
+    testResultsFiles: '**/*.trx'
 

@@ -8,6 +8,8 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  majorVersion: '1'
+  minorVersion: '0'
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
@@ -18,4 +20,4 @@ steps:
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
-
+- script: dotnet pack .\src\Ermine\Ermine.csproj  --configuration $(buildConfiguration) /p:Version=$(majorVersion).$(minorVersion).$(Build.BuildId)

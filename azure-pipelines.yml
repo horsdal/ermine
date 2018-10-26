@@ -20,4 +20,4 @@ steps:
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
-- script: dotnet pack .\src\Ermine\Ermine.csproj  --configuration $(buildConfiguration) /p:Version=$(majorVersion).$(minorVersion).$(Build.BuildId)
+- script: dotnet pack src/Ermine/Ermine.csproj  --configuration $(buildConfiguration) /p:Version=$(majorVersion).$(minorVersion).$(Build.BuildId)

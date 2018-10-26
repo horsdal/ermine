@@ -13,11 +13,20 @@ variables:
 
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'Build'
+  displayName: 'build'
 - script: dotnet test test/UnitTest/UnitTest.csproj --configuration $(buildConfiguration) --logger trx
-  displayName: 'Unit test'  
+  displayName: 'unit test'  
 - task: PublishTestResults@2
   inputs:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
-- script: dotnet pack src/Ermine/Ermine.csproj  --configuration $(buildConfiguration) /p:Version=$(majorVersion).$(minorVersion).$(Build.BuildId)
+  displayName: 'publish test results'
+- script: dotnet pack src/Ermine/Ermine.csproj --configuration $(buildConfiguration) --no-build /p:Version=$(majorVersion).$(minorVersion).$(Build.BuildId)
+  displayName: 'create package'
+- task: DotNetCoreCLI@2
+  inputs:
+    command: push
+    nuGetFeedType: internal
+    publishVstsFeed: ermine
+    packagesToPush: '**/*nupkg'
+  displayName: 'pubish package'

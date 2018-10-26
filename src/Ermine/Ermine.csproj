@@ -2,9 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-      <Version>1.0</Version>
+      <Description>Easy to use generic event handler add-on for Marten</Description>
+      <PackageTags>Marten</PackageTags>
+      <Authors>c.horsdal</Authors>
+      <PackageProjectUrl>https://github.com/horsdal/ermine</PackageProjectUrl>
+      <PackageLicenseUrl>https://github.com/horsdal/ermine/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Marten" Version="2.0.0" />
   </ItemGroup>

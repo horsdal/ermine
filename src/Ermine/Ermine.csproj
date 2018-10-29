@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
       <Description>Easy to use generic event handler add-on for Marten</Description>
       <PackageTags>Marten</PackageTags>
-      <Authors>c.horsdal</Authors>
+      <Authors>Christian Horsdal</Authors>
       <PackageProjectUrl>https://github.com/horsdal/ermine</PackageProjectUrl>
       <PackageLicenseUrl>https://github.com/horsdal/ermine/blob/master/LICENSE</PackageLicenseUrl>
       <PackageId>Ermines</PackageId>

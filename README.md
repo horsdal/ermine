@@ -1,4 +1,5 @@
 [![Build Status](https://chr-horsdal.visualstudio.com/ermine/_apis/build/status/horsdal.ermine)](https://chr-horsdal.visualstudio.com/ermine/_build/latest?definitionId=2)
+[![NuGet version](https://img.shields.io/nuget/v/Ermines.svg?style=flat)](https://www.nuget.org/packages/Ermines)
 
 # Ermine
 Easy to use generic event handler add-on for [Marten](https://github.com/JasperFx/marten).

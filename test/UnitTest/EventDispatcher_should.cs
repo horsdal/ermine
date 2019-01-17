@@ -53,7 +53,7 @@ namespace UnitTest
         {
             var eventPage = CreateEventPage(eventCount);
             await this.sut.ApplyAsync(null, eventPage, CancellationToken.None);
-            Assert.Equal(eventCount, this.eventHandler.NoOfCalls);
+            Assert.Equal(eventCount*2, this.eventHandler.NoOfCalls);
         }
 
         [Theory]

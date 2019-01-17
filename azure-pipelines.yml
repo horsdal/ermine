@@ -16,6 +16,7 @@ steps:
     testRunner: VSTest
     testResultsFiles: '**/*.trx'
   displayName: 'publish test results'
+  condition: always()
 - script: dotnet pack src/Ermine/Ermine.csproj --configuration $(buildConfiguration) --no-build /p:Version=$(majorVersion).$(minorVersion).$(Build.BuildId)
   displayName: 'create package'
 - task: DotNetCoreCLI@2
@@ -24,4 +25,4 @@ steps:
     nuGetFeedType: internal
     publishVstsFeed: ermine
     packagesToPush: '**/*nupkg'
-  displayName: 'pubish package'
+  displayName: 'publish package'
